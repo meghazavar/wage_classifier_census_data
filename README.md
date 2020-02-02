@@ -1,6 +1,6 @@
 ---
-title: Data Science Venn Diagram
-type: exercise
+title: Good Fast Cheap Hackathon
+type: Group Project
 creator:
     name: Alexander Combs
     city: NYC
@@ -48,7 +48,7 @@ Your team will have until 5:00 Eastern / 4:00 Central (East Coast) or 5:00 Mount
  ### Submission
  ---
 
-The task is to predict if a person's income is in excess of $50,000 given certain profile information, and more specifically to generate predicted probabilities of income being **above** $50,000 for each row in the test set. This will simply be a csv with a single column of the probability  **_with 'wage' as a header_**. Use the link below to fill out a google form with your predictions. 
+The task is to predict if a person's income is in excess of $50,000 given certain profile information, and more specifically to generate predicted probabilities of income being **above** $50,000 for each row in the test set. This will simply be a .csv with a single column of the probability  **_with 'wage' as a header_**. Use the link below to fill out a google form with your predictions. 
 
 #### [Submission Link](https://docs.google.com/forms/d/e/1FAIpQLSffgFjVHWFc9JSd7sS-3Bbi-jxMUMI_q3Y6mWBLu1jfZiXgwg/viewform?usp=sf_link)
 
