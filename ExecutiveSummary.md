@@ -1,9 +1,16 @@
 
+# Hackathon-Good-Fast-Cheap  
+
+teammates (Scott Rosengrants , Megha Zavar)
+### Organization
+This repositories contains data folder and 2 jupyter notebooksone with EDA and another one for buiding the model.
+
+
 # Goal
 
-The project was completed as part of 1 day ( 8hours) Hackathon ,with a goal to create the best performing predictive model 
-on a hold-out sample of data to Predict whether income exceeds $50K/yr based on census data. Also known as "Census Income" dataset.
-Our team was  presented with following contrainst .More details on project statement can be found ![here](https://git.generalassemb.ly/mzavar/Hackathon-Good-Fast-Cheap)
+The project was completed as part of a 1 day (8hour) Hackathon ,with a goal to create the best performing predictive model 
+on a hold-out sample of data to predict whether income exceeds $50K/yr based on census data. Also known as "Census Income" dataset.
+Our team was presented with following contraint .More details on project statement can be found ![here](https://git.generalassemb.ly/mzavar/Hackathon-Good-Fast-Cheap)
 
 ### Team Algorithm Constraint
 Must use a Random Forest
@@ -11,17 +18,17 @@ Your choice of features
 Your choice of samples
 
 # About data
-The dataset has Rows 32561 columns 14 features, 7 categorical, 6 are numerical features. The target column being predicted is
+The dataset has 32561 rows and 14 columns as features, 7 categorical, 6 numerical. The target column being predicted is
 called 'wage' with 2 values <=50k and  >50k.
 Data can be found ![here](https://archive.ics.uci.edu/ml/datasets/adult) 
 
 # Exploratory Data Analysis
 ### Missing data
-The seems clean with no missing values with exeption  leading spaces and few '?' on few of the cartofrical data.
-we removed '?' with 'unkown' with lack of any better mputing strategy and removed spaces.
+The seems clean with no missing values with exeption of leading spaces and few '?' on few of the cartorical data.
+We replaced '?' with 'unknown' with lack of any better imputing strategy and removed spaces.
 
 ### Handling categorical data
-we converted the ** targe ** column, wage to a numerical eqivalent where  0 meant  wage<=50k and 1 meant wage>50k.
+We converted the **target** column, wage to a numerical equivalent where  0 meant  wage<=50k and 1 meant wage>50k.
 
 We analysed the categorical columns, identified them as nominal or ordinal columns and converted them to numerical or dropped them if they were repetative , contained non-relevant information to predict the target , as part of EDA
 
@@ -37,13 +44,11 @@ We analysed the categorical columns, identified them as nominal or ordinal colum
 |native-country|42 |nominal |buecketed in 2 categores as USA as 50% of records and other 41  categories comprised  remaining half |United-States= 1 , Other -0 
 
 
-By the end of EDA , we had  36 numerical feature which was way below the threshold of 80 sqrt(total rows), so we decided to
-throw in all features in to the model.
+By the end of EDA , we had  36 numerical features which was way below the maximum recomended threshold of 80 sqrt(total rows), so we decided to throw in all features into the model as a starting place.
 
 # Modelling approach and Results
 
-We were constrianed to using the 'Random forest machine' algorithm. The problem  to classify  if a person's wages were less than 50k or more than 50k given his  profile information. The target was however the probabilities than  the actual outcome
-with which it was predicted. We started training out of box 'RandomForestClassifier'model from Sk learn with training data
+We were constrianed to using the 'Random forest machine' algorithm. The objective was to classify if a person's wages were less than 50k or more than 50k given their profile information. The required delirable however was the probability of the outcome ( >50k). We started with a 'RandomForestClassifier' model from Sklearn set with all of its defaults with training data
 which was created by spliiting the  dataset in training and  test data with a 75 /25 split.
 While the First model itself was good and has accuracy of 96 % on training data  it suffered from very high variance.
 The next was to tune the model  for various hyperparameters for decision tree and random forest.
@@ -62,4 +67,4 @@ The following table shows the results summary and iteration we experimented with
 
 # Conclusion
 
-The new simpler and smaller features list of ( just 12 features) when paired with the optimized Random Forrest performed the best and had the highest accuracy score out of all the attempts. Its test accuracy was also higher than the train accuracy indicating the Random Forrest is no longer overfit.
+The new simpler and smaller features list of (just 12 features) when paired with the optimized Random Forrest performed the best and had the highest accuracy score out of all the attempts. Its test accuracy was also higher than the train accuracy indicating the Random Forrest is no longer overfit. This model was used to create the predictions included in our submission_sm.csv for the Hackathon challenge.
