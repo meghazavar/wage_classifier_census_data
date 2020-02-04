@@ -16,34 +16,39 @@ called 'wage' with 2 values <=50k and  >50k.
 Data can be found ![here](https://archive.ics.uci.edu/ml/datasets/adult) 
 
 # Exploratory Data Analysis
-### missing data
+### Missing data
 The seems clean with no missing values with exeption  leading spaces and few '?' on few of the cartofrical data.
 we removed '?' with 'unkown' with lack of any better mputing strategy and removed spaces.
 
-
-
-### handling categorical data
+### Handling categorical data
 we converted the ** targe ** column, wage to a numerical eqivalent where  0 meant  wage<=50k and 1 meant wage>50k.
 
 We analysed the categorical columns, identified them as nominal or ordinal columns and converted them to numerical or dropped them if they were repetative , contained non-relevant information to predict the target , as part of EDA
 
-|  column |Categories|Type   | description  | Missing data|  
+|  column |Categories|Type   | description  | categories|  
 |---|---|---|---|--- |
 | wage  |2   |binary |  Converted to 0 as < 50k and 1  > |   |   |
 | workclass|9 |nominal| dummified  |{Private,Local-gov,?,State-gov,Self-emp-inc,Federal-gov,Without-pay, Never-worked}
 | education | 60  | ordinal | Dropped as education-num has same information in numeric form  |   |   |
-| marital_status  | 5  | nominal  |   | {Married-civ-spouse,Never-married,Divorced,Separated,Widowed,Married-spouse-absent,Married-AF-spouse} |
-|occupation |15 |noimnal |
-|relationship| 6|nominal | skip for now as it might be same as marital_status|Husband,Not-in-family,Own-child,Unmarried,Wife,Other-relative
-|sex |2 |nominal | 0 - Male , 1 - Female | none
-|native-country|42 |nominal | United-States= 1 , Other -0 |
+| marital-status  | 5  | nominal  | dummified  | {Married-civ-spouse,Never-married,Divorced,Separated,Widowed,Married-spouse-absent,Married-AF-spouse} |
+|occupation |15 |noimnal | dummifies |
+|relationship| 6|nominal | dropping it as it might be same as marital_status, might introduce muti-collinearity|Husband,Not-in-family,Own-child,Unmarried,Wife,Other-relative
+|sex |2 |nominal |  | 0 - Male , 1 - Female
+|native-country|42 |nominal |buecketed in 2 categores as USA as 50% of records and other 41  categories comprised  remaining half |United-States= 1 , Other -0 
 
 
+By the end of EDA , we had  36 numerical feature which was way below the threshold of 80 sqrt(total rows), so we decided to
+throw in all features in to the model.
 
+# Modelling approach and Results
 
-# Modelling approach
+We were constrianed to using the 'Random forest machine' algorithm. The problem  to classify  if a person's wages were less than 50k or more than 50k given his  profile information. The target was however the probabilities than  the actual outcome
+with which it was predicted. We started training out of box 'RandomForestClassifier'model from Sk learn with training data
+which was created by spliiting the  dataset in training and  test data with a 75 /25 split.
+While the First model itself was good and has accuracy of 96 % on training data  it suffered from very high variance.
+The next was to tune the model  for various hyperparameters for decision tree and random forest.
+The following table shows the results summary and iteration we experimented with to tune the model. 
 
-# Results
 
 | Model  | train accuracy  | test accuracy|  description  |  |
 |---|---|---|---|---|
