@@ -61,3 +61,5 @@ The following table shows the results summary and iteration we experimented with
 
 
 # Conclusion
+
+The new simpler and smaller features list of ( just 12 features) when paired with the optimized Random Forrest performed the best and had the highest accuracy score out of all the attempts. Its test accuracy was also higher than the train accuracy indicating the Random Forrest is no longer overfit.
