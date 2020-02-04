@@ -25,6 +25,7 @@ we converted the target coloum wage to a numerical eqivalent where  0 meant  wag
 
 ### handling categorical data
 We looked at following categorical columns and converted them to numerical or dropped them , as part of EDA
+
 |  column |Categories|Type   | description  | Missing data|  
 |---|---|---|---|--- |
 | wage  |2   |binary |  Converted to 0 as < 50k and 1  > |   |   |
