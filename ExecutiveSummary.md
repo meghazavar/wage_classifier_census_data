@@ -20,22 +20,24 @@ Data can be found ![here](https://archive.ics.uci.edu/ml/datasets/adult)
 The seems clean with no missing values with exeption  leading spaces and few '?' on few of the cartofrical data.
 we removed '?' with 'unkown' with lack of any better mputing strategy and removed spaces.
 
-### target
-we converted the target coloum wage to a numerical eqivalent where  0 meant  wage<=50k and 1 meant wage>50k.
+
 
 ### handling categorical data
-We looked at following categorical columns and converted them to numerical or dropped them , as part of EDA
+we converted the ** targe ** column, wage to a numerical eqivalent where  0 meant  wage<=50k and 1 meant wage>50k.
+
+We analysed the categorical columns, identified them as nominal or ordinal columns and converted them to numerical or dropped them if they were repetative , contained non-relevant information to predict the target , as part of EDA
 
 |  column |Categories|Type   | description  | Missing data|  
 |---|---|---|---|--- |
 | wage  |2   |binary |  Converted to 0 as < 50k and 1  > |   |   |
-|workclass|9 |nominal| dummified 
+| workclass|9 |nominal| dummified  |{Private,Local-gov,?,State-gov,Self-emp-inc,Federal-gov,Without-pay, Never-worked}
 | education | 60  | ordinal | Dropped as education-num has same information in numeric form  |   |   |
 | marital_status  | 5  | nominal  |   | 5  |
 |occupation |15 |noimnal |
 |relationship| 6|nominal | skip for now as it might be same as marital_status|Husband,Not-in-family,Own-child,Unmarried,Wife,Other-relative
 |sex |2 |nominal | 0 - Male , 1 - Female | none
 |native-country|42 |nominal | United-States= 1 , Other -0 |
+
 
 
 # Modelling approach
