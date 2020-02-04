@@ -32,11 +32,12 @@ We analysed the categorical columns, identified them as nominal or ordinal colum
 | wage  |2   |binary |  Converted to 0 as < 50k and 1  > |   |   |
 | workclass|9 |nominal| dummified  |{Private,Local-gov,?,State-gov,Self-emp-inc,Federal-gov,Without-pay, Never-worked}
 | education | 60  | ordinal | Dropped as education-num has same information in numeric form  |   |   |
-| marital_status  | 5  | nominal  |   | 5  |
+| marital_status  | 5  | nominal  |   | {Married-civ-spouse,Never-married,Divorced,Separated,Widowed,Married-spouse-absent,Married-AF-spouse} |
 |occupation |15 |noimnal |
 |relationship| 6|nominal | skip for now as it might be same as marital_status|Husband,Not-in-family,Own-child,Unmarried,Wife,Other-relative
 |sex |2 |nominal | 0 - Male , 1 - Female | none
 |native-country|42 |nominal | United-States= 1 , Other -0 |
+
 
 
 
